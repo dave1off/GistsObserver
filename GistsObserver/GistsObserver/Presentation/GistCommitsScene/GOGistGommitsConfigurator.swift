@@ -24,7 +24,7 @@ class GOGistGommitsConfiguratorImplementation: GOGistGommitsConfiguratorProtocol
             view: view
         )
         
-        let gistCommitsRouter = GOGistCommitsRouterImplementation(view: view)
+        let gistCommitsRouter = GOBackRouterImplementation(view: view)
         
         view.presenter = gistCommitsPresenter
         view.router = gistCommitsRouter

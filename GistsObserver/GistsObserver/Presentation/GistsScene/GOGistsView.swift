@@ -15,7 +15,6 @@ protocol GOGistsViewProtocol: class {
 
 class GOGistsViewImplementation: UIViewController {
     
-    @IBOutlet weak var usersCollectionView: UICollectionView!
     @IBOutlet weak var gistsTableView: UITableView!
     
     @IBOutlet weak var navigationView: UIView!
@@ -48,7 +47,6 @@ class GOGistsViewImplementation: UIViewController {
         super.viewDidLoad()
         
         navigationView.backgroundColor = GOColors.goGray
-        usersCollectionView.backgroundColor = GOColors.goGray
         
         gistsAdapter.initialize(tableView: gistsTableView, inputProvider: self)
         presenter.onViewDidLoad()

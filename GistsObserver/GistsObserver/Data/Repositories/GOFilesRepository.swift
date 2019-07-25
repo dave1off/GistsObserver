@@ -1,6 +1,6 @@
 import Foundation
 
-final class GOImagesRepository {
+final class GOFilesRepository {
     
     private let networkService: GONetworkServiceProtocol
     
@@ -10,9 +10,9 @@ final class GOImagesRepository {
     
 }
 
-extension GOImagesRepository: GODownloadImageRepositoryProtocol {
+extension GOFilesRepository: GODownloadFileRepositoryProtocol {
     
-    func downloadImage(at path: String, callback: @escaping (Data?, Error?) -> ()) {
+    func downloadFile(at path: String, callback: @escaping (Data?, Error?) -> ()) {
         networkService.get(endpoint: path, callback: callback)
     }
     

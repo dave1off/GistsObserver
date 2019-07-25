@@ -66,7 +66,7 @@ class GOGistsPresenterImplementation: GOGistsPresenterProtocol {
             
             self.images[login] = imageData
             
-            self.executeOnMain {
+            GOExecutor.executeOnMain {
                 self.view?.imageLoadedFor(data: imageData, user: login)
             }
         }
@@ -79,7 +79,7 @@ class GOGistsPresenterImplementation: GOGistsPresenterProtocol {
         
         getGistsUseCase.getPublicGists(page: page, perPage: perPage) { result, error in
             guard let gists = result, error == nil else {
-                self.executeOnMain {
+                GOExecutor.executeOnMain {
                     self.view?.loadingFailure()
                 }
                 
@@ -94,15 +94,11 @@ class GOGistsPresenterImplementation: GOGistsPresenterProtocol {
             
             self.page = page
             
-            self.executeOnMain {
+            GOExecutor.executeOnMain {
                 self.view?.gistsLoaded(gists: gistsViewModels, page: self.page)
                 self.mostGists()
             }
         }
-    }
-    
-    private func executeOnMain(block: @escaping () -> ()) {
-        DispatchQueue.main.async(execute: block)
     }
     
     private func mostGists() {

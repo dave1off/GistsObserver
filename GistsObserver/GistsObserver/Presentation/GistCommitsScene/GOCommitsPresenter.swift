@@ -39,14 +39,10 @@ class GOGistCommitsPresenterImplementation: GOGistCommitsPresenterProtocol {
                 )
             }
             
-            self.executeOnMain {
+            GOExecutor.executeOnMain {
                 self.view?.commitsLoaded(commits: viewModels)
             }
         }
-    }
-    
-    private func executeOnMain(block: @escaping () -> ()) {
-        DispatchQueue.main.async(execute: block)
     }
     
 }

@@ -69,13 +69,15 @@ extension GONetworkService: GONetworkServiceProtocol {
         }.resume()
     }
     
-    func get(endpoint: String, callback: @escaping (Data?, URLResponse?, Error?) -> ()) {
+    func get(endpoint: String, callback: @escaping (Data?, Error?) -> ()) {
         guard let url = URL(string: endpoint) else {
-            callback(nil, nil, GONetworkServiceError.invalidRequestURL(endpoint))
+            callback(nil, GONetworkServiceError.invalidRequestURL(endpoint))
             return
         }
         
-        session.dataTask(with: URLRequest(url: url), completionHandler: callback).resume()
+        session.dataTask(with: URLRequest(url: url)) { data, _, error in
+            callback(data, error)
+        }.resume()
     }
     
 }

@@ -50,15 +50,11 @@ class GOGistPresenterImplementation: GOGistPresenterProtocol {
                     files: gist.files.map { $0.value }
                 )
                 
-                self.executeOnMain {
+                GOExecutor.executeOnMain {
                     self.view?.infoLoaded(gist: viewModel)
                 }
             }
         }
-    }
-    
-    private func executeOnMain(block: @escaping () -> ()) {
-        DispatchQueue.main.async(execute: block)
     }
     
 }

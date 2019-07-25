@@ -25,6 +25,7 @@ class GOGistViewImplementation: UIViewController {
     var router: GOGistRouterProtocol!
     
     var infos: [GOGistInfoViewModel] = []
+    var files: [GOFileDomainModel] = []
     
     private var gistID = ""
     
@@ -108,6 +109,8 @@ extension GOGistViewImplementation: GOGistViewProtocol {
         
         gistID = gist.id
         
+        files = gist.files
+        
         navigationItem.title = gist.name
     }
     
@@ -123,7 +126,9 @@ extension GOGistViewImplementation: GOGistInfoTableAdapterInput {
         let viewModel = infos[info]
         
         if viewModel.name == GOStrings.files {
-            
+            let gistFilesConfigurator = GOGistFilesConfiguratorImplementation(files: files)
+            let gistFileView = GOGistFilesViewImplementation(configurator: gistFilesConfigurator)
+            router.setGistFilesScene(view: gistFileView)
         } else {
             let gistCommitsConfigurator = GOGistGommitsConfiguratorImplementation(id: gistID)
             let gistCommitsView = GOGistCommitsViewImplementation(configurator: gistCommitsConfigurator)

@@ -9,6 +9,6 @@ protocol GONetworkServiceProtocol {
         callback: @escaping (T?, Error?) -> ()
     )
     
-    func get(endpoint: String, callback: @escaping (Data?, URLResponse?, Error?) -> ())
+    func get(endpoint: String, callback: @escaping (Data?, Error?) -> ())
     
 }

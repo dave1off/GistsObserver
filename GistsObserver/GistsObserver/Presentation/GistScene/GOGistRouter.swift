@@ -1,7 +1,9 @@
 protocol GOGistRouterProtocol {
     
     func goBack()
+    
     func setGistCommitsScene(view: GOGistCommitsViewImplementation)
+    func setGistFilesScene(view: GOGistFilesViewImplementation)
     
 }
 
@@ -18,6 +20,10 @@ class GOGistRouterImplementation: GOGistRouterProtocol {
     }
     
     func setGistCommitsScene(view: GOGistCommitsViewImplementation) {
+        self.view?.navigationController?.pushViewController(view, animated: true)
+    }
+    
+    func setGistFilesScene(view: GOGistFilesViewImplementation) {
         self.view?.navigationController?.pushViewController(view, animated: true)
     }
     

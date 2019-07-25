@@ -58,7 +58,6 @@
 		919B587122E93FC0005DAEDD /* GOGistDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B587022E93FC0005DAEDD /* GOGistDescriptionViewModel.swift */; };
 		919B587522E951F7005DAEDD /* GOGistCommitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B587322E951F7005DAEDD /* GOGistCommitsView.swift */; };
 		919B587622E951F7005DAEDD /* GOGistCommitsLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 919B587422E951F7005DAEDD /* GOGistCommitsLayout.xib */; };
-		919B587822E952C1005DAEDD /* GOGistCommitsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B587722E952C1005DAEDD /* GOGistCommitsRouter.swift */; };
 		919B587A22E95301005DAEDD /* GOCommitsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B587922E95301005DAEDD /* GOCommitsPresenter.swift */; };
 		919B587C22E953B4005DAEDD /* GOGetGistCommitsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B587B22E953B4005DAEDD /* GOGetGistCommitsRepositoryProtocol.swift */; };
 		919B587E22E956BA005DAEDD /* GOGetGistCommitsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B587D22E956BA005DAEDD /* GOGetGistCommitsUseCase.swift */; };
@@ -67,6 +66,19 @@
 		919B588822E95D46005DAEDD /* GOGistCommitTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B588622E95D46005DAEDD /* GOGistCommitTableCell.swift */; };
 		919B588922E95D46005DAEDD /* GOGistCommitTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 919B588722E95D46005DAEDD /* GOGistCommitTableCell.xib */; };
 		919B588B22E96021005DAEDD /* GOGistCommitsTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B588A22E96021005DAEDD /* GOGistCommitsTableAdapter.swift */; };
+		919B588D22E99994005DAEDD /* GOFilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B588C22E99994005DAEDD /* GOFilesRepository.swift */; };
+		919B588F22E999E4005DAEDD /* GODownloadFileRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B588E22E999E4005DAEDD /* GODownloadFileRepositoryProtocol.swift */; };
+		919B589122E99A4A005DAEDD /* GODownloadFileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B589022E99A4A005DAEDD /* GODownloadFileUseCase.swift */; };
+		919B589522E99E15005DAEDD /* GOGistFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B589322E99E15005DAEDD /* GOGistFilesView.swift */; };
+		919B589622E99E15005DAEDD /* GOGistFilesLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 919B589422E99E15005DAEDD /* GOGistFilesLayout.xib */; };
+		919B589A22E9C004005DAEDD /* GOBackRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B589922E9C004005DAEDD /* GOBackRouter.swift */; };
+		919B589C22E9C0F7005DAEDD /* GOGistFilesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B589B22E9C0F7005DAEDD /* GOGistFilesPresenter.swift */; };
+		919B589F22E9C249005DAEDD /* GOGistFileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B589E22E9C249005DAEDD /* GOGistFileViewModel.swift */; };
+		919B58A222E9CEBF005DAEDD /* GOGistFilesAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B58A122E9CEBF005DAEDD /* GOGistFilesAdapter.swift */; };
+		919B58A622E9CEFD005DAEDD /* GOGistFileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B58A422E9CEFD005DAEDD /* GOGistFileTableCell.swift */; };
+		919B58A722E9CEFD005DAEDD /* GOGistFileTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 919B58A522E9CEFD005DAEDD /* GOGistFileTableCell.xib */; };
+		919B58A922E9D351005DAEDD /* GOGistFilesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B58A822E9D350005DAEDD /* GOGistFilesConfigurator.swift */; };
+		919B58AB22E9DE80005DAEDD /* GOExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B58AA22E9DE80005DAEDD /* GOExecutor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,7 +135,6 @@
 		919B587022E93FC0005DAEDD /* GOGistDescriptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOGistDescriptionViewModel.swift; sourceTree = "<group>"; };
 		919B587322E951F7005DAEDD /* GOGistCommitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOGistCommitsView.swift; sourceTree = "<group>"; };
 		919B587422E951F7005DAEDD /* GOGistCommitsLayout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GOGistCommitsLayout.xib; sourceTree = "<group>"; };
-		919B587722E952C1005DAEDD /* GOGistCommitsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOGistCommitsRouter.swift; sourceTree = "<group>"; };
 		919B587922E95301005DAEDD /* GOCommitsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOCommitsPresenter.swift; sourceTree = "<group>"; };
 		919B587B22E953B4005DAEDD /* GOGetGistCommitsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOGetGistCommitsRepositoryProtocol.swift; sourceTree = "<group>"; };
 		919B587D22E956BA005DAEDD /* GOGetGistCommitsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOGetGistCommitsUseCase.swift; sourceTree = "<group>"; };
@@ -132,6 +143,19 @@
 		919B588622E95D46005DAEDD /* GOGistCommitTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOGistCommitTableCell.swift; sourceTree = "<group>"; };
 		919B588722E95D46005DAEDD /* GOGistCommitTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GOGistCommitTableCell.xib; sourceTree = "<group>"; };
 		919B588A22E96021005DAEDD /* GOGistCommitsTableAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOGistCommitsTableAdapter.swift; sourceTree = "<group>"; };
+		919B588C22E99994005DAEDD /* GOFilesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOFilesRepository.swift; sourceTree = "<group>"; };
+		919B588E22E999E4005DAEDD /* GODownloadFileRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GODownloadFileRepositoryProtocol.swift; sourceTree = "<group>"; };
+		919B589022E99A4A005DAEDD /* GODownloadFileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GODownloadFileUseCase.swift; sourceTree = "<group>"; };
+		919B589322E99E15005DAEDD /* GOGistFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOGistFilesView.swift; sourceTree = "<group>"; };
+		919B589422E99E15005DAEDD /* GOGistFilesLayout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GOGistFilesLayout.xib; sourceTree = "<group>"; };
+		919B589922E9C004005DAEDD /* GOBackRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOBackRouter.swift; sourceTree = "<group>"; };
+		919B589B22E9C0F7005DAEDD /* GOGistFilesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOGistFilesPresenter.swift; sourceTree = "<group>"; };
+		919B589E22E9C249005DAEDD /* GOGistFileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOGistFileViewModel.swift; sourceTree = "<group>"; };
+		919B58A122E9CEBF005DAEDD /* GOGistFilesAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOGistFilesAdapter.swift; sourceTree = "<group>"; };
+		919B58A422E9CEFD005DAEDD /* GOGistFileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOGistFileTableCell.swift; sourceTree = "<group>"; };
+		919B58A522E9CEFD005DAEDD /* GOGistFileTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GOGistFileTableCell.xib; sourceTree = "<group>"; };
+		919B58A822E9D350005DAEDD /* GOGistFilesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOGistFilesConfigurator.swift; sourceTree = "<group>"; };
+		919B58AA22E9DE80005DAEDD /* GOExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOExecutor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +220,7 @@
 				913E0C0E22DE8E1B00BF7179 /* GistsScene */,
 				919B585722E929E9005DAEDD /* GistScene */,
 				919B587222E951CA005DAEDD /* GistCommitsScene */,
+				919B589222E99DEE005DAEDD /* GistFilesScene */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -217,6 +242,7 @@
 				919B584022E67D2A005DAEDD /* GODownloadImageUseCase.swift */,
 				919B586022E92DAF005DAEDD /* GOGetGistUseCase.swift */,
 				919B587D22E956BA005DAEDD /* GOGetGistCommitsUseCase.swift */,
+				919B589022E99A4A005DAEDD /* GODownloadFileUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -292,6 +318,7 @@
 			children = (
 				919B581622E464E9005DAEDD /* GOGistsRepository.swift */,
 				919B583C22E67AC0005DAEDD /* GOImagesRepository.swift */,
+				919B588C22E99994005DAEDD /* GOFilesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -303,6 +330,7 @@
 				919B583E22E67B09005DAEDD /* GODownloadImageRepositoryProtocol.swift */,
 				919B585E22E92D08005DAEDD /* GOGetGistRepositoryProtocol.swift */,
 				919B587B22E953B4005DAEDD /* GOGetGistCommitsRepositoryProtocol.swift */,
+				919B588E22E999E4005DAEDD /* GODownloadFileRepositoryProtocol.swift */,
 			);
 			path = RepositoriesProtocols;
 			sourceTree = "<group>";
@@ -353,6 +381,8 @@
 				919B584F22E75A4D005DAEDD /* GONavigationController.swift */,
 				919B585322E916EE005DAEDD /* GOColors.swift */,
 				919B585522E91AE3005DAEDD /* GOStrings.swift */,
+				919B589922E9C004005DAEDD /* GOBackRouter.swift */,
+				919B58AA22E9DE80005DAEDD /* GOExecutor.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -413,7 +443,6 @@
 				919B588122E95C79005DAEDD /* ViewModels */,
 				919B587322E951F7005DAEDD /* GOGistCommitsView.swift */,
 				919B587422E951F7005DAEDD /* GOGistCommitsLayout.xib */,
-				919B587722E952C1005DAEDD /* GOGistCommitsRouter.swift */,
 				919B587922E95301005DAEDD /* GOCommitsPresenter.swift */,
 				919B587F22E95837005DAEDD /* GOGistGommitsConfigurator.swift */,
 			);
@@ -443,6 +472,45 @@
 				919B588A22E96021005DAEDD /* GOGistCommitsTableAdapter.swift */,
 			);
 			path = Adapters;
+			sourceTree = "<group>";
+		};
+		919B589222E99DEE005DAEDD /* GistFilesScene */ = {
+			isa = PBXGroup;
+			children = (
+				919B58A322E9CED1005DAEDD /* GistFileCell */,
+				919B58A022E9CE89005DAEDD /* Adapters */,
+				919B589D22E9C206005DAEDD /* ViewModels */,
+				919B589322E99E15005DAEDD /* GOGistFilesView.swift */,
+				919B589422E99E15005DAEDD /* GOGistFilesLayout.xib */,
+				919B589B22E9C0F7005DAEDD /* GOGistFilesPresenter.swift */,
+				919B58A822E9D350005DAEDD /* GOGistFilesConfigurator.swift */,
+			);
+			path = GistFilesScene;
+			sourceTree = "<group>";
+		};
+		919B589D22E9C206005DAEDD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				919B589E22E9C249005DAEDD /* GOGistFileViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		919B58A022E9CE89005DAEDD /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				919B58A122E9CEBF005DAEDD /* GOGistFilesAdapter.swift */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		919B58A322E9CED1005DAEDD /* GistFileCell */ = {
+			isa = PBXGroup;
+			children = (
+				919B58A422E9CEFD005DAEDD /* GOGistFileTableCell.swift */,
+				919B58A522E9CEFD005DAEDD /* GOGistFileTableCell.xib */,
+			);
+			path = GistFileCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,7 +577,9 @@
 				913E0C0022DE8CBC00BF7179 /* Assets.xcassets in Resources */,
 				913E0C0D22DE8DF900BF7179 /* GOGistsController.xib in Resources */,
 				919B587622E951F7005DAEDD /* GOGistCommitsLayout.xib in Resources */,
+				919B58A722E9CEFD005DAEDD /* GOGistFileTableCell.xib in Resources */,
 				919B585B22E92A12005DAEDD /* GOGistLayout.xib in Resources */,
+				919B589622E99E15005DAEDD /* GOGistFilesLayout.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,10 +591,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				919B587122E93FC0005DAEDD /* GOGistDescriptionViewModel.swift in Sources */,
+				919B589A22E9C004005DAEDD /* GOBackRouter.swift in Sources */,
 				913E0C1D22DE966400BF7179 /* GOGistNetworkModel.swift in Sources */,
+				919B589522E99E15005DAEDD /* GOGistFilesView.swift in Sources */,
 				919B585022E75A4D005DAEDD /* GONavigationController.swift in Sources */,
 				919B580722E3E63F005DAEDD /* GOGistForkNetworkModel.swift in Sources */,
 				919B586122E92DAF005DAEDD /* GOGetGistUseCase.swift in Sources */,
+				919B589122E99A4A005DAEDD /* GODownloadFileUseCase.swift in Sources */,
 				919B583122E52469005DAEDD /* GONetworkServiceProtocol.swift in Sources */,
 				913E0C0C22DE8DF900BF7179 /* GOGistsView.swift in Sources */,
 				919B585A22E92A12005DAEDD /* GOGistView.swift in Sources */,
@@ -533,20 +606,24 @@
 				919B581C22E465F4005DAEDD /* GOGistDomainModel.swift in Sources */,
 				919B580522E3E5C5005DAEDD /* GOUserNetworkModel.swift in Sources */,
 				919B582E22E5213E005DAEDD /* String.swift in Sources */,
+				919B58A222E9CEBF005DAEDD /* GOGistFilesAdapter.swift in Sources */,
 				919B588522E95CB0005DAEDD /* GOGistCommitViewModel.swift in Sources */,
 				919B583D22E67AC0005DAEDD /* GOImagesRepository.swift in Sources */,
 				913E0C1322DE903500BF7179 /* GOGistsConfigurator.swift in Sources */,
 				919B580F22E4602D005DAEDD /* GOGistTableCell.swift in Sources */,
 				919B581F22E46735005DAEDD /* GONetworkService.swift in Sources */,
+				919B588F22E999E4005DAEDD /* GODownloadFileRepositoryProtocol.swift in Sources */,
 				919B582722E51D68005DAEDD /* GOForkDomainModel.swift in Sources */,
 				913E0BF922DE8CBB00BF7179 /* AppDelegate.swift in Sources */,
 				919B586922E93A18005DAEDD /* GOGistInfoTableAdapter.swift in Sources */,
 				919B583722E53201005DAEDD /* GOGistsTableAdapter.swift in Sources */,
 				919B580B22E3E7CD005DAEDD /* GOGistChangesNetworkModel.swift in Sources */,
 				919B586F22E93D1C005DAEDD /* GOGistInfoViewModel.swift in Sources */,
+				919B58A922E9D351005DAEDD /* GOGistFilesConfigurator.swift in Sources */,
+				919B58A622E9CEFD005DAEDD /* GOGistFileTableCell.swift in Sources */,
 				919B588822E95D46005DAEDD /* GOGistCommitTableCell.swift in Sources */,
 				919B585D22E92C83005DAEDD /* GOGistConfigurator.swift in Sources */,
-				919B587822E952C1005DAEDD /* GOGistCommitsRouter.swift in Sources */,
+				919B589F22E9C249005DAEDD /* GOGistFileViewModel.swift in Sources */,
 				913E0C1822DE932B00BF7179 /* GOGetPublicGistsUseCase.swift in Sources */,
 				919B583F22E67B09005DAEDD /* GODownloadImageRepositoryProtocol.swift in Sources */,
 				919B581422E462D3005DAEDD /* UIView.swift in Sources */,
@@ -565,11 +642,14 @@
 				919B580922E3E72C005DAEDD /* GOGistCommitNetworkModel.swift in Sources */,
 				919B582322E51C0E005DAEDD /* GOFileDomainModel.swift in Sources */,
 				919B583422E52E54005DAEDD /* GOGistViewModel.swift in Sources */,
+				919B588D22E99994005DAEDD /* GOFilesRepository.swift in Sources */,
 				913E0C1522DE910100BF7179 /* GOGistsRouter.swift in Sources */,
 				919B587C22E953B4005DAEDD /* GOGetGistCommitsRepositoryProtocol.swift in Sources */,
 				919B582922E51D8B005DAEDD /* GOCommitDomainModel.swift in Sources */,
 				919B584122E67D2A005DAEDD /* GODownloadImageUseCase.swift in Sources */,
+				919B589C22E9C0F7005DAEDD /* GOGistFilesPresenter.swift in Sources */,
 				919B580322E3E3D1005DAEDD /* GOGistFileNetworkModel.swift in Sources */,
+				919B58AB22E9DE80005DAEDD /* GOExecutor.swift in Sources */,
 				919B585F22E92D08005DAEDD /* GOGetGistRepositoryProtocol.swift in Sources */,
 				919B588B22E96021005DAEDD /* GOGistCommitsTableAdapter.swift in Sources */,
 				919B587522E951F7005DAEDD /* GOGistCommitsView.swift in Sources */,

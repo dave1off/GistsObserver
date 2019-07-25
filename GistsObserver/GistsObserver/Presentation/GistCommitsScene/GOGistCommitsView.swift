@@ -14,7 +14,7 @@ class GOGistCommitsViewImplementation: UIViewController {
     @IBOutlet weak var loaderIndicator: UIActivityIndicatorView!
     
     var presenter: GOGistCommitsPresenterProtocol!
-    var router: GOGistCommitsRouterProtocol!
+    var router: GOBackRouterProtocol!
     
     private let adapter = GOGistCommitsTableAdapter()
     
