@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GistsObserver/Presentation/GistCommitsScene/GOCommitsPresenter.swift"
-            timestampString = "585756469.778399"
+            filePath = "GistsObserver/Presentation/GistsScene/Helpers/Adapters/GOUsersCollectionAdapter.swift"
+            timestampString = "585968054.877061"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "onViewDidLoad()"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "setImage(_:for:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -15,22 +15,26 @@ class GOGistsPresenterImplementation: GOGistsPresenterProtocol {
     
     private let getGistsUseCase: GOGetPublicGistsUseCaseProtocol
     private let downloadImageUseCase: GODownloadImageUseCaseProtocol
+    private let addImagesUseCase: GOAddImagesToRepositoryUseCaseProtocol
     
-    private var images: [String: Data] = [:]
     private var gists: [GOGistDomainModel] = []
     
     private var page: UInt64 = 1
     private let perPage: UInt64 = 10
+    
+    let repository = GOImagesRepository(networkService: GONetworkService.shared)
 
     private weak var view: GOGistsViewProtocol?
     
     init(
         getGistsUseCase: GOGetPublicGistsUseCaseProtocol,
         downloadImageUseCase: GODownloadImageUseCaseProtocol,
+        addImagesUseCase: GOAddImagesToRepositoryUseCaseProtocol,
         view: GOGistsViewProtocol
     ) {
         self.getGistsUseCase = getGistsUseCase
         self.downloadImageUseCase = downloadImageUseCase
+        self.addImagesUseCase = addImagesUseCase
         
         self.view = view
     }
@@ -53,18 +57,10 @@ class GOGistsPresenterImplementation: GOGistsPresenterProtocol {
     
     func onDownloadImage() {
         let login = view?.userForAvatar ?? ""
-        
-        if let alreadyDonwloaded = images[login] {
-            view?.imageLoadedFor(data: alreadyDonwloaded, user: login)
-            return
-        }
-        
         let link = gists.filter { $0.owner.login == login }.first?.owner.avatarURL ?? ""
         
-        downloadImageUseCase.downloadImage(at: link) { data, error in
+        repository.fetchImage(at: link) { data, error in
             guard let imageData = data, error == nil else { return }
-            
-            self.images[login] = imageData
             
             GOExecutor.executeOnMain {
                 self.view?.imageLoadedFor(data: imageData, user: login)
@@ -109,6 +105,16 @@ class GOGistsPresenterImplementation: GOGistsPresenterProtocol {
             
             counter[author] = (counter[author] ?? 0) + 1
         }
+        
+        let sorted = counter.sorted { $0.value > $1.value }
+        
+        var result: [String] = []
+        
+        for element in sorted where result.count < 10 {
+            result.append(element.key)
+        }
+        
+        view?.usersLoaded(users: result)
     }
     
 }

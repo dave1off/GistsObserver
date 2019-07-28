@@ -2,19 +2,21 @@ import UIKit
 
 protocol GOGistsViewProtocol: class {
     
-    func gistsLoaded(gists: [GOGistViewModel], page: UInt64)
-    func imageLoadedFor(data: Data, user: String)
-    
     var userForAvatar: String { get }
     
-    func startLoading()
+    func gistsLoaded(gists: [GOGistViewModel], page: UInt64)
+    func usersLoaded(users: [String])
     
+    func imageLoadedFor(data: Data, user: String)
+    
+    func startLoading()
     func loadingFailure()
     
 }
 
 class GOGistsViewImplementation: UIViewController {
     
+    @IBOutlet weak var usersCollectionView: UICollectionView!
     @IBOutlet weak var gistsTableView: UITableView!
     
     @IBOutlet weak var navigationView: UIView!
@@ -25,12 +27,14 @@ class GOGistsViewImplementation: UIViewController {
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     private let gistsAdapter = GOGistsTableAdapter()
+    private let usersAdapter = GOUsersCollectionAdapter()
     
     var presenter: GOGistsPresenterProtocol!
     var router: GOGistsRouterProtocol!
     
     var gists: [GOGistViewModel] = []
-    var images: [String: [UIImageView]] = [:]
+    var users: [String] = []
+    
     var userForAvatar = ""
     
     init(configurator: GOGistsConfiguratorProtocol) {
@@ -49,6 +53,8 @@ class GOGistsViewImplementation: UIViewController {
         navigationView.backgroundColor = GOColors.goGray
         
         gistsAdapter.initialize(tableView: gistsTableView, inputProvider: self)
+        usersAdapter.initialize(tableView: usersCollectionView, inputProvider: self)
+        
         presenter.onViewDidLoad()
         
         navigationItem.title = GOStrings.gists
@@ -71,10 +77,23 @@ class GOGistsViewImplementation: UIViewController {
             gistsTableView.deselectRow(at: indexPath, animated: true)
         }
     }
+    
+    func onDownloadImage(author: String) {
+        userForAvatar = author
+        
+        presenter.onDownloadImage()
+    }
 
 }
 
 extension GOGistsViewImplementation: GOGistsViewProtocol {
+    
+    func usersLoaded(users: [String]) {
+        self.users = users
+        
+        usersAdapter.reload()
+        usersCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: true)
+    }
     
     func gistsLoaded(gists: [GOGistViewModel], page: UInt64) {
         self.gists = gists
@@ -83,6 +102,8 @@ extension GOGistsViewImplementation: GOGistsViewProtocol {
         loadingIndicator.isHidden = true
         
         gistsTableView.isHidden = false
+        usersCollectionView.isHidden = false
+        
         navigationTitleLabel.text = page.description
         
         if page > 1 {
@@ -92,12 +113,14 @@ extension GOGistsViewImplementation: GOGistsViewProtocol {
         navigationRightArrow.isEnabled = true
         
         gistsAdapter.reload()
-        
         gistsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
     
     func imageLoadedFor(data: Data, user: String) {
-        images[user]?.forEach { $0.image = UIImage(data: data) }
+        let image = UIImage(data: data) ?? UIImage()
+        
+        gistsAdapter.setImage(image, for: user)
+        usersAdapter.setImage(image, for: user)
     }
     
     func startLoading() {
@@ -108,6 +131,7 @@ extension GOGistsViewImplementation: GOGistsViewProtocol {
         navigationRightArrow.isEnabled = false
         
         gistsTableView.isHidden = true
+        usersCollectionView.isHidden = true
     }
     
     func loadingFailure() {
@@ -115,6 +139,7 @@ extension GOGistsViewImplementation: GOGistsViewProtocol {
         loadingIndicator.isHidden = true
         
         gistsTableView.isHidden = false
+        usersCollectionView.isHidden = false
         
         navigationLeftArrow.isEnabled = true
         navigationRightArrow.isEnabled = true
@@ -131,15 +156,12 @@ extension GOGistsViewImplementation: GOGistsTableAdapterInput {
         router.setGistScene(view: gistView)
     }
     
-    func onDownloadImage(for avatarView: UIImageView, author: String) {
-        if images[author] == nil {
-            images[author] = []
-        }
+}
+
+extension GOGistsViewImplementation: GOUsersCollectionAdapterInput {
+    
+    func onSelect(user: String) {
         
-        images[author]?.append(avatarView)
-        
-        userForAvatar = author
-        presenter.onDownloadImage()
     }
     
 }

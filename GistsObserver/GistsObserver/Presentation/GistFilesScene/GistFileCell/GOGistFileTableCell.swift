@@ -11,6 +11,7 @@ class GOGistFileTableCell: UITableViewCell {
         super.awakeFromNib()
         
         contentsView.isEditable = false
+        contentsView.backgroundColor = GOColors.goGray
     }
     
 }

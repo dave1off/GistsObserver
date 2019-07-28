@@ -4,7 +4,7 @@ protocol GOGistsTableAdapterInput: class {
     
     var gists: [GOGistViewModel] { get set }
     
-    func onDownloadImage(for avatarView: UIImageView, author: String)
+    func onDownloadImage(author: String)
     func onSelect(gist: GOGistViewModel)
     
 }
@@ -37,6 +37,16 @@ final class GOGistsTableAdapter: NSObject {
         
         tableView?.reloadData()
     }
+    
+    func setImage(_ image: UIImage, for user: String) {
+        for (order, gist) in gists.enumerated() where gist.authorLogin == user {
+            let indexPath = IndexPath(row: order, section: 0)
+            
+            guard let cell = tableView?.cellForRow(at: indexPath) as? GOGistTableCell else { continue }
+            
+            cell.authorAvatarView.image = image
+        }
+    }
 
 }
 
@@ -66,7 +76,7 @@ extension GOGistsTableAdapter: UITableViewDataSource {
         cell.authorLoginLabel.text = gist.authorLogin
         cell.authorAvatarView.image = nil
         
-        inputProvider?.onDownloadImage(for: cell.authorAvatarView, author: gist.authorLogin)
+        inputProvider?.onDownloadImage(author: gist.authorLogin)
         
         return cell
     }

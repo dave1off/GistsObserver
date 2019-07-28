@@ -14,10 +14,12 @@ class GOGistsConfiguratorImplementation: GOGistsConfiguratorProtocol {
         
         let imagesRepository = GOImagesRepository(networkService: GONetworkService.shared)
         let imageDownloadUseCase = GODownloadImageUseCaseImplementation(repository: imagesRepository)
+        let addImagesUseCase = GOAddImagesToRepositoryUseCaseImplementation(repository: imagesRepository)
         
         let gistsPresenter = GOGistsPresenterImplementation(
             getGistsUseCase: getPublicGistsUseCase,
             downloadImageUseCase: imageDownloadUseCase,
+            addImagesUseCase: addImagesUseCase,
             view: view
         )
         
