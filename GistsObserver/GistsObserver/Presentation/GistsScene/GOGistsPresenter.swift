@@ -14,27 +14,22 @@ protocol GOGistsPresenterProtocol {
 class GOGistsPresenterImplementation: GOGistsPresenterProtocol {
     
     private let getGistsUseCase: GOGetPublicGistsUseCaseProtocol
-    private let downloadImageUseCase: GODownloadImageUseCaseProtocol
-    private let addImagesUseCase: GOAddImagesToRepositoryUseCaseProtocol
+    private let fetchImageUseCase: GOFetchImageUseCaseProtocol
     
     private var gists: [GOGistDomainModel] = []
     
     private var page: UInt64 = 1
     private let perPage: UInt64 = 10
-    
-    let repository = GOImagesRepository(networkService: GONetworkService.shared)
 
     private weak var view: GOGistsViewProtocol?
     
     init(
         getGistsUseCase: GOGetPublicGistsUseCaseProtocol,
-        downloadImageUseCase: GODownloadImageUseCaseProtocol,
-        addImagesUseCase: GOAddImagesToRepositoryUseCaseProtocol,
+        fetchImageUseCase: GOFetchImageUseCaseProtocol,
         view: GOGistsViewProtocol
     ) {
         self.getGistsUseCase = getGistsUseCase
-        self.downloadImageUseCase = downloadImageUseCase
-        self.addImagesUseCase = addImagesUseCase
+        self.fetchImageUseCase = fetchImageUseCase
         
         self.view = view
     }
@@ -59,7 +54,7 @@ class GOGistsPresenterImplementation: GOGistsPresenterProtocol {
         let login = view?.userForAvatar ?? ""
         let link = gists.filter { $0.owner.login == login }.first?.owner.avatarURL ?? ""
         
-        repository.fetchImage(at: link) { data, error in
+        fetchImageUseCase.fetchImage(at: link) { data, error in
             guard let imageData = data, error == nil else { return }
             
             GOExecutor.executeOnMain {

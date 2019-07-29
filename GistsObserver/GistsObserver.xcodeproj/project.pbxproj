@@ -79,12 +79,12 @@
 		919B58A722E9CEFD005DAEDD /* GOGistFileTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 919B58A522E9CEFD005DAEDD /* GOGistFileTableCell.xib */; };
 		919B58A922E9D351005DAEDD /* GOGistFilesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B58A822E9D350005DAEDD /* GOGistFilesConfigurator.swift */; };
 		919B58AB22E9DE80005DAEDD /* GOExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B58AA22E9DE80005DAEDD /* GOExecutor.swift */; };
-		919B58AD22EC8ADB005DAEDD /* GOAddImagesToRepositoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B58AC22EC8ADB005DAEDD /* GOAddImagesToRepositoryUseCase.swift */; };
-		919B58AF22EC8B08005DAEDD /* GOAddImagesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B58AE22EC8B08005DAEDD /* GOAddImagesRepositoryProtocol.swift */; };
 		919B58B122ED1CDD005DAEDD /* GOUsersCollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B58B022ED1CDD005DAEDD /* GOUsersCollectionAdapter.swift */; };
 		919B58B522ED1DD8005DAEDD /* GOUserCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B58B322ED1DD8005DAEDD /* GOUserCollectionCell.swift */; };
 		919B58B622ED1DD8005DAEDD /* GOUserCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 919B58B422ED1DD8005DAEDD /* GOUserCollectionCell.xib */; };
 		919B58B822ED22B4005DAEDD /* GOUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B58B722ED22B4005DAEDD /* GOUserViewModel.swift */; };
+		919B58DC22EE77AB005DAEDD /* GOFetchImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B58DB22EE77AB005DAEDD /* GOFetchImageUseCase.swift */; };
+		919B58DE22EE77E3005DAEDD /* GOFetchImageRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919B58DD22EE77E3005DAEDD /* GOFetchImageRepositoryProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,12 +162,12 @@
 		919B58A522E9CEFD005DAEDD /* GOGistFileTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GOGistFileTableCell.xib; sourceTree = "<group>"; };
 		919B58A822E9D350005DAEDD /* GOGistFilesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOGistFilesConfigurator.swift; sourceTree = "<group>"; };
 		919B58AA22E9DE80005DAEDD /* GOExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOExecutor.swift; sourceTree = "<group>"; };
-		919B58AC22EC8ADB005DAEDD /* GOAddImagesToRepositoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOAddImagesToRepositoryUseCase.swift; sourceTree = "<group>"; };
-		919B58AE22EC8B08005DAEDD /* GOAddImagesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOAddImagesRepositoryProtocol.swift; sourceTree = "<group>"; };
 		919B58B022ED1CDD005DAEDD /* GOUsersCollectionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOUsersCollectionAdapter.swift; sourceTree = "<group>"; };
 		919B58B322ED1DD8005DAEDD /* GOUserCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOUserCollectionCell.swift; sourceTree = "<group>"; };
 		919B58B422ED1DD8005DAEDD /* GOUserCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GOUserCollectionCell.xib; sourceTree = "<group>"; };
 		919B58B722ED22B4005DAEDD /* GOUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOUserViewModel.swift; sourceTree = "<group>"; };
+		919B58DB22EE77AB005DAEDD /* GOFetchImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOFetchImageUseCase.swift; sourceTree = "<group>"; };
+		919B58DD22EE77E3005DAEDD /* GOFetchImageRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOFetchImageRepositoryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,7 +255,7 @@
 				919B586022E92DAF005DAEDD /* GOGetGistUseCase.swift */,
 				919B587D22E956BA005DAEDD /* GOGetGistCommitsUseCase.swift */,
 				919B589022E99A4A005DAEDD /* GODownloadFileUseCase.swift */,
-				919B58AC22EC8ADB005DAEDD /* GOAddImagesToRepositoryUseCase.swift */,
+				919B58DB22EE77AB005DAEDD /* GOFetchImageUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -345,7 +345,7 @@
 				919B585E22E92D08005DAEDD /* GOGetGistRepositoryProtocol.swift */,
 				919B587B22E953B4005DAEDD /* GOGetGistCommitsRepositoryProtocol.swift */,
 				919B588E22E999E4005DAEDD /* GODownloadFileRepositoryProtocol.swift */,
-				919B58AE22EC8B08005DAEDD /* GOAddImagesRepositoryProtocol.swift */,
+				919B58DD22EE77E3005DAEDD /* GOFetchImageRepositoryProtocol.swift */,
 			);
 			path = RepositoriesProtocols;
 			sourceTree = "<group>";
@@ -629,7 +629,6 @@
 				913E0C0C22DE8DF900BF7179 /* GOGistsView.swift in Sources */,
 				919B585A22E92A12005DAEDD /* GOGistView.swift in Sources */,
 				913E0C1122DE8F1800BF7179 /* GOGistsPresenter.swift in Sources */,
-				919B58AD22EC8ADB005DAEDD /* GOAddImagesToRepositoryUseCase.swift in Sources */,
 				919B585422E916EE005DAEDD /* GOColors.swift in Sources */,
 				919B581C22E465F4005DAEDD /* GOGistDomainModel.swift in Sources */,
 				919B580522E3E5C5005DAEDD /* GOUserNetworkModel.swift in Sources */,
@@ -641,12 +640,12 @@
 				913E0C1322DE903500BF7179 /* GOGistsConfigurator.swift in Sources */,
 				919B580F22E4602D005DAEDD /* GOGistTableCell.swift in Sources */,
 				919B581F22E46735005DAEDD /* GONetworkService.swift in Sources */,
+				919B58DC22EE77AB005DAEDD /* GOFetchImageUseCase.swift in Sources */,
 				919B588F22E999E4005DAEDD /* GODownloadFileRepositoryProtocol.swift in Sources */,
 				919B58B122ED1CDD005DAEDD /* GOUsersCollectionAdapter.swift in Sources */,
 				919B582722E51D68005DAEDD /* GOForkDomainModel.swift in Sources */,
 				913E0BF922DE8CBB00BF7179 /* AppDelegate.swift in Sources */,
 				919B586922E93A18005DAEDD /* GOGistInfoTableAdapter.swift in Sources */,
-				919B58AF22EC8B08005DAEDD /* GOAddImagesRepositoryProtocol.swift in Sources */,
 				919B583722E53201005DAEDD /* GOGistsTableAdapter.swift in Sources */,
 				919B580B22E3E7CD005DAEDD /* GOGistChangesNetworkModel.swift in Sources */,
 				919B586F22E93D1C005DAEDD /* GOGistInfoViewModel.swift in Sources */,
@@ -678,6 +677,7 @@
 				913E0C1522DE910100BF7179 /* GOGistsRouter.swift in Sources */,
 				919B587C22E953B4005DAEDD /* GOGetGistCommitsRepositoryProtocol.swift in Sources */,
 				919B582922E51D8B005DAEDD /* GOCommitDomainModel.swift in Sources */,
+				919B58DE22EE77E3005DAEDD /* GOFetchImageRepositoryProtocol.swift in Sources */,
 				919B584122E67D2A005DAEDD /* GODownloadImageUseCase.swift in Sources */,
 				919B589C22E9C0F7005DAEDD /* GOGistFilesPresenter.swift in Sources */,
 				919B580322E3E3D1005DAEDD /* GOGistFileNetworkModel.swift in Sources */,

@@ -5,7 +5,6 @@ protocol GOUsersCollectionAdapterInput: class {
     var users: [String] { get }
     
     func onDownloadImage(author: String)
-    func onSelect(user: String)
     
 }
 
@@ -22,6 +21,8 @@ final class GOUsersCollectionAdapter: NSObject {
         
         self.collectionView?.delegate = self
         self.collectionView?.dataSource = self
+        
+        self.collectionView?.isPrefetchingEnabled = false
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal

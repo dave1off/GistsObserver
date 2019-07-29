@@ -160,9 +160,7 @@ extension GOGistsViewImplementation: GOGistsTableAdapterInput {
 
 extension GOGistsViewImplementation: GOUsersCollectionAdapterInput {
     
-    func onSelect(user: String) {
-        
-    }
+    
     
 }
 
